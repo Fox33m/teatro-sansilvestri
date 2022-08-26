@@ -1,0 +1,52 @@
+<div class="container">
+  <main class="innerContainer">
+      <div class="movie">
+          <h3 class="movieTitle">{{movieTitle}}</h3>
+          <div class="movieDetails">{{screen}} - {{time}}</div>
+      </div>
+
+      <!-- Legenda posti -->
+      <div class="legend">
+          <span class="glyphicon glyphicon-print freeSeat"></span> LIBERO
+          <span class="glyphicon glyphicon-ban-circle reservedSeat padding-left"></span> RISERVATO
+          <span class="glyphicon glyphicon-ok-sign selectedSeat padding-left"></span> SELEZIONATO                
+      </div>
+
+
+      <p class="font14 marginTop5">SCHERMO</p>
+      <div class="screen"></div>
+      <div>POSTI</div>
+
+
+      <!-- genera l'array -->
+      <div *ngFor="let row of rows" style="margin-top:2%" >
+          <span class="seat" *ngFor="let col of cols" (click)="seatClicked(row + col)" 
+                  [ngSwitch]="getStatus(row + col)" style="margin-left:2%">
+              <span *ngSwitchCase="'selected'" class="glyphicon glyphicon-ok-sign selectedSeat" ></span>
+              <span *ngSwitchCase="'reserved'" class="glyphicon glyphicon-ban-circle reservedSeat"></span>
+              <span *ngSwitchDefault class="glyphicon glyphicon-print freeSeat"></span>
+          </span>
+      </div>
+      
+
+      <!-- Struttura delle informazioni sulle prenotazioni
+      contiene posti selezionati, prezzo e tassa convenienza -->
+      <div *ngIf="selected.length > 0" class="font14 marginTB10">
+          <div class="wordWrap">POSTI SCELTI : {{selected.length}} <span class="count">({{selected}})</span></div>
+          <div>PREZZO : {{ticketPrice}} * {{selected.length}} = {{currency}}.{{ticketPrice*selected.length}} </div>
+          <div>TASSA CONVENIENZA : {{currency}}.{{convFee}}</div>
+          <div>TOTALE : {{currency}}.{{ticketPrice * selected.length + convFee}}</div>
+      </div>
+
+      <!-- Pulsanti di interazione -->
+      <div class="buttonBar marginTop5">
+          <button (click)="clearSelected()" [disabled]="selected.length === 0" class="btn btn-default btn-sm">cancella</button>
+          <button [disabled]="selected.length === 0" (click)="bookSelected()" type="button" class="btn btn-info btn-sm">Pagamento</button>
+      </div> 
+      <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+      
+  </div>
+</div>       
+  </main>     
+</div>
