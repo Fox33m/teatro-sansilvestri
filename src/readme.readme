@@ -13,3 +13,7 @@ il pulsante "cancella" eliminerà tutti i posti selezionati, mentre il pulsante
 siano inattivi fintantoché un posto non viene selezionato può capitare che essi
 si attivino per errore (possibile del browser) pertanto, qualora succedesse, il
 pulsante di pagamento mostra un allert che indica l'assenza di posti selezionati
+
+nel file "index.html" nella src sono presenti collegamenti a codici di bootstrap 
+necessari per far funzionare le funzioni su "app.component.ts"; i codici in questione 
+NON sono stati scritti da me
