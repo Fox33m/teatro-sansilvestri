@@ -14,8 +14,10 @@ export class AppComponent  {
     conv:number;
     rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     cols: number[]  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    rowsPalco: string[] = ['H', 'I', 'J', 'K'];
+    colsPalco: number[] = [11, 12, 13, 14, 15, 16];
 
-    reserved: string[] = ['A2', 'A3', 'F1', 'F2', 'F5', 'F6', 'F7', 'F8'];
+    reserved: string[] = ['A2', 'A3', 'F1', 'F2', 'F5', 'F6', 'F7', 'F8', 'I13', 'I14', 'K16'];
     selected: string[] = [];
 
     ticketPrice: number = 10;
