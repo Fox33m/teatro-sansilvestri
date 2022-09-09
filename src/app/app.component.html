@@ -15,7 +15,7 @@
 
       <p class="font14 marginTop5">SCHERMO</p>
       <div class="screen"></div>
-      <div>POSTI</div>
+      <div>PLATEA</div>
 
 
       <!-- genera l'array -->
@@ -27,7 +27,7 @@
               <span *ngSwitchDefault class="glyphicon glyphicon-print freeSeat"></span>
           </span>
       </div>
-      <div>Palco</div>
+      <div>PALCO</div>
       <div *ngFor="let row of rowsPalco" style="margin-top:2%" >
       <span class="seat" *ngFor="let col of colsPalco" (click)="seatClicked(row + col)" 
               [ngSwitch]="getStatus(row + col)" style="margin-left:2%">
@@ -51,11 +51,6 @@
       <div class="buttonBar marginTop5">
           <button (click)="clearSelected()" [disabled]="selected.length === 0" class="btn btn-default btn-sm">cancella</button>
           <button [disabled]="selected.length === 0" (click)="bookSelected()" type="button" class="btn btn-info btn-sm">Pagamento</button>
-      </div> 
-      <div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
-      
-  </div>
-</div>       
+      </div>        
   </main>     
 </div>
